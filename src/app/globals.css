@@ -1,0 +1,359 @@
+:root {
+  --background: #121212;
+  --foreground: #ffffff;
+  --primary: #10b981; /* Emerald green */
+  --primary-foreground: #ffffff;
+  --secondary: #9333ea; /* Purple */
+  --secondary-foreground: #ffffff;
+  --accent: #f97316; /* Orange */
+  --accent-foreground: #ffffff;
+  --muted: #1e1e1e;
+  --muted-foreground: #a1a1aa;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #2e2e2e;
+  --input: #2e2e2e;
+  --ring: #10b981;
+  --radius: 0.5rem;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --container-width: 1200px;
+  --header-height: 4rem;
+
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+/* Add these styles to ensure text is readable on dark background */
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Update link hover states for better visibility */
+a:hover {
+  color: var(--primary);
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+/* Header */
+.main-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: var(--spacing-4) 0;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.search-container {
+  position: relative;
+  display: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: var(--spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1rem;
+  width: 1rem;
+  color: var(--muted-foreground);
+}
+
+.search-input {
+  width: 16rem;
+  padding-left: 2.5rem;
+}
+
+.main-nav {
+  display: none;
+  align-items: center;
+  gap: var(--spacing-6);
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.cart-button {
+  position: relative;
+}
+
+.cart-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.cart-count {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  height: 1.25rem;
+  width: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-button,
+.signup-button {
+  display: none;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: var(--spacing-12) 0;
+  background-color: var(--muted);
+}
+
+.hero-content {
+  display: grid;
+  gap: var(--spacing-6);
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.hero-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-description {
+  color: var(--muted-foreground);
+  max-width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.hero-image {
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius);
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Featured Section */
+.featured-section {
+  padding: var(--spacing-12) 0;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.section-description {
+  color: var(--muted-foreground);
+}
+
+/* Footer */
+.main-footer {
+  border-top: 1px solid var(--border);
+  padding: var(--spacing-6) 0;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+.footer-brand {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.footer-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-tagline {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.footer-heading {
+  font-weight: 500;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  font-size: 0.875rem;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .hero-buttons {
+    flex-direction: row;
+  }
+
+  .footer-links {
+    flex-direction: row;
+    gap: var(--spacing-8);
+  }
+}
+
+@media (min-width: 768px) {
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .main-nav {
+    display: flex;
+  }
+
+  .login-button,
+  .signup-button {
+    display: inline-flex;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    gap: var(--spacing-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--spacing-12);
+  }
+}
+
+/* Update button hover states */
+.button-primary:hover {
+  background-color: #0ea271; /* Slightly darker emerald */
+}
+
+.button-secondary:hover {
+  background-color: #7e22ce; /* Slightly darker purple */
+}
+
+.button-accent:hover {
+  background-color: #ea580c; /* Slightly darker orange */
+}
+
+/* Add styles for card backgrounds */
+.card-bg {
+  background-color: var(--muted);
+  border: 1px solid var(--border);
+}

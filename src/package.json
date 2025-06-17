@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "db": "^6.0.3",
+    "mysql2": "^3.6.0",
+    "next-auth": "^4.24.5"
+  }
+}
